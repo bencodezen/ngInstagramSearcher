@@ -1,6 +1,5 @@
 angular.module('instaSearcherApp', [])
   .controller('instaSearcherCtrl', function($scope, $http) {
-    var url = "https://api.instagram.com/v1/tags/puppy/media/recent";
     var request = {
       "client_id": "ca6875003ac547a9a3bafff119ffb863",
       count: 10,
@@ -8,17 +7,27 @@ angular.module('instaSearcherApp', [])
     };
 
     $scope.images = [];
+    $scope.query = "";
+    $scope.urlQuery = "https://api.instagram.com/v1/tags/";
 
-    $http({
-      method: 'JSONP',
-      url: url,
-      params: request
-    })
-    .then(function(result) {
-      for (data in result.data.data)
-        $scope.images.push(result.data.data[data].images.standard_resolution.url);
-    })
-    .then(function(error) {
-      console.log(error);
-    });
+    $scope.searchRecentTags = function() {
+      $scope.urlQuery += $scope.query + "/media/recent";
+
+      $http({
+        method: 'JSONP',
+        url: $scope.urlQuery,
+        params: request
+      })
+      .then(function(result) {
+        for (data in result.data.data)
+          $scope.images.push(result.data.data[data].images.standard_resolution.url);
+      })
+      .then(function(error) {
+        console.log(error);
+      });
+
+      $scope.images = [];
+      $scope.urlQuery = "https://api.instagram.com/v1/tags/";
+    };
   });
+
