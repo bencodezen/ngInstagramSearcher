@@ -7,13 +7,16 @@ angular.module('instaSearcherApp', [])
       callback: 'JSON_CALLBACK'
     };
 
+    $scope.thumbnails = [];
+
     $http({
       method: 'JSONP',
       url: url,
       params: request
     })
     .then(function(result) {
-      console.log(result);
+      for (data in result.data.data)
+        $scope.thumbnails.push(result.data.data[data].images.thumbnail.url);
     })
     .then(function(error) {
       console.log(error);
