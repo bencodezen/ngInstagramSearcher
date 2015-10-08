@@ -29,8 +29,10 @@ input[type=submit] {
   margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .search-results__image {
   flex: 1;
+  width: 175px;
 }

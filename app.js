@@ -7,7 +7,7 @@ angular.module('instaSearcherApp', [])
       callback: 'JSON_CALLBACK'
     };
 
-    $scope.thumbnails = [];
+    $scope.images = [];
 
     $http({
       method: 'JSONP',
@@ -16,7 +16,7 @@ angular.module('instaSearcherApp', [])
     })
     .then(function(result) {
       for (data in result.data.data)
-        $scope.thumbnails.push(result.data.data[data].images.thumbnail.url);
+        $scope.images.push(result.data.data[data].images.standard_resolution.url);
     })
     .then(function(error) {
       console.log(error);
