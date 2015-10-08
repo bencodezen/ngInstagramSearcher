@@ -15,8 +15,10 @@
     <input type="text" name="query" id="query">
     <input type="submit" value="Submit">
   </form>
-  <div ng-repeat="image in thumbnails">
-    <img ng-src="{{ image }}" />
+  <div class="search-results">
+    <div ng-repeat="image in thumbnails">
+      <img ng-src="{{ image }}" class="search-results__image" />
+    </div>
   </div>
 </body>
 </html>

@@ -22,3 +22,15 @@ input[type=submit] {
   font-size: 1.1em;
   border-radius: 8px;
 }
+
+.search-results {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-results__image {
+  flex: 1;
+}
