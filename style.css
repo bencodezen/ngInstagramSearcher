@@ -43,10 +43,28 @@ input[type=submit] {
   margin-top: 30px;
 }
 
+.message__has-results.ng-hide-add,
+.message__has-results.ng-hide-remove {
+  transition: 0s linear all;
+}
+
+.message__has-results.ng-hide-add-active,
+.message__has-results.ng-hide-remove-active {
+  transition: 0.5s linear all;
+}
+
 .message__has-results {
+  line-height: 20px;
+  opacity: 1;
   text-align: center;
   margin: 0.5em;
   color: white;
   font-weight: bold;
   font-family: sans-serif;
 }
+
+.message__has-results.ng-hide {
+  line-height: 0;
+  opacity: 0;
+}
+

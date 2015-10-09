@@ -1,4 +1,4 @@
-angular.module('instaSearcherApp', [])
+angular.module('instaSearcherApp', ['ngAnimate'])
   .controller('instaSearcherCtrl', function($scope, $http) {
     var request = {
       "client_id": "ca6875003ac547a9a3bafff119ffb863",
