@@ -21,6 +21,7 @@ angular.module('instaSearcherApp', [])
       .then(function(result) {
         for (data in result.data.data)
           $scope.images.push(result.data.data[data].images.standard_resolution.url);
+        $scope.imageLength = $scope.images.length;
       })
       .then(function(error) {
         console.log(error);

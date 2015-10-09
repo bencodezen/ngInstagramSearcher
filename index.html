@@ -15,6 +15,10 @@
     <input type="text" ng-model="query" name="query" id="query">
     <input type="submit" value="Submit">
   </form>
+  <div class="message">
+    <p ng-show="imageLength > 0" class="message__has-results">We found {{ imageLength }} results!</p>
+    <p ng-show="imageLength === 0" class="message__has-results">Uh oh! Looks like we couldn't find anything...</p>
+  </div>
   <div class="search-results">
     <div ng-repeat="image in images">
       <img ng-src="{{ image }}" class="search-results__image" />
